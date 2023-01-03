@@ -1,0 +1,60 @@
+using System;
+
+namespace Expense_Calculator
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Добро пожаловать в калькулятор расходов!");
+
+            Console.WriteLine();
+
+            Console.Write("Введите зарплату/пенсию: ");
+            decimal salary = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Квартплата: ");
+            decimal payOfApartment = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Коммунальные услуги: ");
+            decimal communal = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Карта\"Халва\": ");
+            decimal cardHalva = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Кредит: ");
+            decimal credit = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Интернет ByFly: ");
+            decimal byFly = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Интернет на ноутбуке: ");
+            decimal internetOnLaptop = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Интернет в навигаторе: ");
+            decimal internetOnNavigator = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Топливо: ");
+            decimal fuel = decimal.Parse(Console.ReadLine());
+
+            decimal expenses = payOfApartment + communal + cardHalva + credit + byFly + internetOnLaptop + internetOnNavigator + fuel;
+
+            decimal result = salary - (payOfApartment + communal + cardHalva + credit + byFly + internetOnLaptop + internetOnNavigator + fuel);
+
+            const decimal ZERO = 0;
+
+            Console.WriteLine();
+
+            if (result > 0)
+            {
+                Console.WriteLine($"Общие расходы: {expenses}\nОстаток: {result}");
+            }
+            if (result <= 0)
+            {
+                Console.WriteLine($"Общие расходы: {expenses}\nОстаток: {ZERO}");
+            }
+          
+            Console.ReadKey();
+        }
+    }
+}
